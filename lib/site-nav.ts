@@ -3,8 +3,8 @@ export const siteConfig = {
   tagline: "E-commerce solutions that ship on time and convert.",
   description:
     "Prime Auto Deals designs, builds, migrates, and grows online stores—Shopify, WooCommerce, headless stacks, integrations, CRO, and long-term engineering support for brands that need a senior partner.",
-  phone: "(892) 242-0583",
-  phoneTel: "tel:+18922420583",
+  phone: "802 242 0583",
+  phoneTel: "tel:+18022420583",
   email: "query@primeauto.deals",
   emailMailto: "mailto:query@primeauto.deals",
   addressLines: ["1916 E 51ST Street 2FL", "Brooklyn, NY 11234"],
