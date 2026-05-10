@@ -74,10 +74,13 @@ export function Navbar() {
   /** Drives slide-in / slide-out; `mobileOpen` stays true until exit animation finishes. */
   const [mobileSlideIn, setMobileSlideIn] = React.useState(false)
   const mobilePanelRef = React.useRef<HTMLDivElement>(null)
+  /** True while a user-initiated close is in progress (slide-out). Used so a timeout can unlock if `transitionend` never fires. */
+  const mobileClosingUserRef = React.useRef(false)
   const navWrapRef = React.useRef<HTMLDivElement>(null)
   const scrollTimeoutRef = React.useRef<number | null>(null)
   const lastScrollYRef = React.useRef(0)
   const closeMobile = React.useCallback(() => {
+    mobileClosingUserRef.current = true
     setMobileSlideIn((slideIn) => {
       if (!slideIn) {
         queueMicrotask(() => setMobileOpen(false))
@@ -87,6 +90,7 @@ export function Navbar() {
   }, [])
 
   const openMobile = React.useCallback(() => {
+    mobileClosingUserRef.current = false
     setMobileOpen(true)
     requestAnimationFrame(() => {
       requestAnimationFrame(() => setMobileSlideIn(true))
@@ -145,17 +149,31 @@ export function Navbar() {
 
   React.useEffect(() => {
     if (!mobileOpen) return
-    const prev = document.body.style.overflow
+    const html = document.documentElement
+    const prevHtmlOverflow = html.style.overflow
+    const prevBodyOverflow = document.body.style.overflow
+    html.style.overflow = "hidden"
     document.body.style.overflow = "hidden"
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") closeMobile()
     }
     document.addEventListener("keydown", onKey)
     return () => {
-      document.body.style.overflow = prev
+      html.style.overflow = prevHtmlOverflow
+      document.body.style.overflow = prevBodyOverflow
       document.removeEventListener("keydown", onKey)
     }
   }, [mobileOpen, closeMobile])
+
+  /** If the slide-out transition never fires `transitionend`, still drop `mobileOpen` so scroll lock is cleared. */
+  React.useEffect(() => {
+    if (!mobileOpen || mobileSlideIn || !mobileClosingUserRef.current) return
+    const id = window.setTimeout(() => {
+      mobileClosingUserRef.current = false
+      setMobileOpen(false)
+    }, 400)
+    return () => window.clearTimeout(id)
+  }, [mobileOpen, mobileSlideIn])
 
   React.useEffect(() => {
     if (!mobileOpen) return
@@ -166,6 +184,7 @@ export function Navbar() {
       if (e.target !== panel || e.propertyName !== "transform") return
       setMobileSlideIn((current) => {
         if (!current) {
+          mobileClosingUserRef.current = false
           queueMicrotask(() => setMobileOpen(false))
         }
         return current
@@ -331,7 +350,7 @@ export function Navbar() {
                 aria-modal="true"
                 aria-label="Site navigation"
                 className={cn(
-                  "fixed inset-y-0 right-0 z-[610] flex w-full max-w-full flex-col bg-background shadow-2xl transition-transform duration-300 ease-out",
+                  "fixed inset-y-0 right-0 z-[610] flex h-dvh max-h-dvh w-full max-w-full flex-col bg-background shadow-2xl transition-transform duration-300 ease-out",
                   mobileSlideIn ? "translate-x-0" : "translate-x-full"
                 )}
               >
@@ -346,7 +365,7 @@ export function Navbar() {
                     <XIcon className="size-6" />
                   </button>
                 </div>
-                <div className="flex min-h-0 flex-1 flex-col overflow-y-auto px-4 pb-8">
+                <div className="flex min-h-0 flex-1 flex-col overflow-y-auto overscroll-y-contain px-4 pb-8 [-webkit-overflow-scrolling:touch]">
                   <ul className="mt-4 space-y-0 divide-y divide-ink/10 border-y border-ink/10">
                     {mainNav.map((link) => (
                       <li key={link.href}>
