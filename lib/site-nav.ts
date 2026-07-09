@@ -5,8 +5,8 @@ export const siteConfig = {
     "Prime Auto Deals designs, builds, migrates, and grows online stores—Shopify, WooCommerce, headless stacks, integrations, CRO, and long-term engineering support for brands that need a senior partner.",
   phone: "802 242 0583",
   phoneTel: "tel:+18022420583",
-  email: "query@primeauto.deals",
-  emailMailto: "mailto:query@primeauto.deals",
+  email: "query@primeautodeals.live",
+  emailMailto: "mailto:query@primeautodeals.live",
   addressLines: ["1916 E 51ST Street 2FL", "Brooklyn, NY 11234"],
   hours: "Mon–Sat, 9am–7pm ET",
 } as const
