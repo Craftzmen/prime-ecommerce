@@ -62,7 +62,7 @@ const serviceMenu = [
   },
 ] as const
 
-type OpenMenu = "services" | null
+type OpenMenu = "services" | "policies" | null
 
 const primaryNav = mainNav.filter((item) => item.href !== "/services")
 
@@ -200,6 +200,7 @@ export function Navbar() {
     return pathname.startsWith(href)
   }
   const isServicesActive = pathname.startsWith("/services")
+  const isPoliciesActive = policyNav.some((p) => pathname.startsWith(p.href))
 
   return (
     <header
@@ -302,11 +303,50 @@ export function Navbar() {
               ) : null}
             </div>
             <span className="w-px self-stretch bg-ink/10" aria-hidden />
-            {policyNav.map((item) => (
-              <React.Fragment key={item.href}>
-                <NavRailLink href={item.href} label={item.label} active={isActive(item.href)} />
-              </React.Fragment>
-            ))}
+            <div className="relative flex items-stretch">
+              <button
+                type="button"
+                aria-haspopup="menu"
+                aria-expanded={openMenu === "policies"}
+                onClick={() => setOpenMenu((v) => (v === "policies" ? null : "policies"))}
+                className={cn(
+                  "flex items-center gap-1.5 px-4 text-sm font-semibold transition hover:bg-ink/[0.03]",
+                  isPoliciesActive || openMenu === "policies" ? "text-signal" : "text-ink/65 hover:text-ink"
+                )}
+              >
+                Policies
+                <ChevronDownIcon className={cn("size-4 transition-transform", openMenu === "policies" && "rotate-180")} />
+              </button>
+
+              {openMenu === "policies" ? (
+                <div
+                  role="menu"
+                  aria-label="Policies"
+                  className="absolute right-0 top-full z-30 mt-1 w-[min(100vw-2rem,240px)] border border-ink/10 bg-background shadow-xl"
+                >
+                  <div className="border-b border-ink/10 px-4 py-3">
+                    <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-signal">Legal</p>
+                  </div>
+                  <ul className="py-1">
+                    {policyNav.map((item) => (
+                      <li key={item.href}>
+                        <Link
+                          href={item.href}
+                          role="menuitem"
+                          onClick={closeMenus}
+                          className={cn(
+                            "block px-4 py-3 text-sm font-semibold transition hover:bg-muted/80",
+                            isActive(item.href) ? "bg-signal/10 text-signal" : "text-ink"
+                          )}
+                        >
+                          {item.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
+            </div>
           </div>
 
           <div className="flex items-center gap-2 md:gap-3">
