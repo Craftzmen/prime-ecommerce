@@ -10,7 +10,6 @@ import { siteConfig } from "@/lib/site-nav"
 
 /**
  * Opens the user's mail client with a prefilled message.
- * Replace with a server action, form provider, or CRM webhook when ready.
  */
 export function ContactMessageForm() {
   const [status, setStatus] = useState<"idle" | "sent">("idle")

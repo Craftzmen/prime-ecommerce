@@ -75,8 +75,9 @@ export function PrivacyPolicyContent() {
             <section id="introduction" className="scroll-mt-28">
               <h2 className="mb-4 text-2xl font-bold tracking-tight text-ink md:text-3xl">Introduction</h2>
               <p>
-                Prime Auto Deals (&ldquo;Prime,&rdquo; &ldquo;we,&rdquo; &ldquo;us&rdquo;) operates this marketing website as a demo. This Privacy Policy describes how we
-                would collect, use, and protect personal information on a production site. Replace with counsel-approved language before collecting real customer data.
+                Prime Auto Deals (&ldquo;Prime,&rdquo; &ldquo;we,&rdquo; &ldquo;us&rdquo;) operates this website.
+                This Privacy Policy describes how we collect, use, and protect personal information when you
+                visit our site or engage with us for professional services.
               </p>
             </section>
 
@@ -105,7 +106,7 @@ export function PrivacyPolicyContent() {
 
             <section id="how-we-use" className="scroll-mt-28">
               <h2 className="mb-4 text-2xl font-bold tracking-tight text-ink md:text-3xl">How We Use Your Information</h2>
-              <p className="mb-3">We would use information to:</p>
+              <p className="mb-3">We use information to:</p>
               <ul className="list-disc space-y-1.5 pl-5">
                 {howWeUse.map((item) => (
                   <li key={item}>{item}</li>
@@ -140,7 +141,7 @@ export function PrivacyPolicyContent() {
 
             <section id="retention" className="scroll-mt-28">
               <h2 className="mb-4 text-2xl font-bold tracking-tight text-ink md:text-3xl">Data Retention</h2>
-              <p>We would retain information only as long as needed for the purposes above or as required by law, then delete or de-identify it.</p>
+              <p>We retain information only as long as needed for the purposes above or as required by law, then delete or de-identify it.</p>
             </section>
 
             <section id="rights" className="scroll-mt-28">
@@ -157,7 +158,7 @@ export function PrivacyPolicyContent() {
 
             <section id="contact" className="scroll-mt-28 rounded-none border border-ink/10 bg-card p-6 md:p-8">
               <h2 className="mb-4 text-2xl font-bold tracking-tight text-ink md:text-3xl">Contact</h2>
-              <p className="mb-6">Questions about this demo policy:</p>
+              <p className="mb-6">Questions about this policy:</p>
               <div className="grid gap-5 md:grid-cols-2">
                 <div className="flex items-start gap-4">
                   <span className="flex size-10 shrink-0 items-center justify-center rounded-none bg-signal/10 text-signal">

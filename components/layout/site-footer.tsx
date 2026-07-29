@@ -144,7 +144,7 @@ export function SiteFooter() {
 
         <div className="flex flex-col items-center justify-between gap-4 border-t border-white/10 py-6 md:flex-row md:gap-8">
           <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-white/40">
-            &copy; {new Date().getFullYear()} {siteConfig.name}. Demo marketing site; details are illustrative.
+            &copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
             {policyNav.map((link) => (

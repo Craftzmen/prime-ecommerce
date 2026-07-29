@@ -6,11 +6,11 @@ import { PrivacyPolicyContent } from "@/components/policies/privacy-policy-conte
 export const metadata: Metadata = {
   title: "Privacy Policy | Prime Auto Deals",
   description:
-    "How Prime Auto Deals (demo site) would collect, use, and protect personal information for visitors and prospective clients.",
+    "How Prime Auto Deals collects, uses, and protects personal information for visitors and prospective clients.",
   keywords: ["privacy policy", "data protection", "prime auto deals privacy", "e-commerce agency privacy"],
   openGraph: {
     title: "Privacy Policy — Prime Auto Deals",
-    description: "Demo privacy policy for the Prime Auto Deals marketing site.",
+    description: "Privacy policy for the Prime Auto Deals website and client engagements.",
     url: "/privacy-policy",
     type: "website",
   },
@@ -25,7 +25,7 @@ export default function PrivacyPolicyPage() {
       <PolicyHeader
         eyebrow="Legal"
         title="Privacy Policy"
-        description="How we would collect, use, and protect personal information on a production Prime Auto Deals website and client engagements."
+        description="How we collect, use, and protect personal information on the Prime Auto Deals website and in client engagements."
         lastUpdated="May 10, 2026"
         breadcrumbs={[
           { label: "Home", href: "/" },

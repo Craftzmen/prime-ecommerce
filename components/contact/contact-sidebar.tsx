@@ -50,7 +50,8 @@ export function ContactSidebar() {
           <div className="flex gap-3">
             <ShieldCheckIcon className="size-5 shrink-0 text-signal" />
             <p className="text-sm leading-relaxed text-ink/80">
-              Demo marketing site—phone and email route to placeholder endpoints. Replace with production CRM and counsel-approved policies before launch.
+              Inquiries are handled by our team—not a ticket queue. Phone and email reach the same
+              people who scope and deliver your work.
             </p>
           </div>
         </div>

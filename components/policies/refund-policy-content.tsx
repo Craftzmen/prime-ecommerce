@@ -45,55 +45,61 @@ export function RefundPolicyContent() {
             <section id="overview" className="scroll-mt-28">
               <h2 className="mb-4 text-2xl font-bold tracking-tight text-ink md:text-3xl">Overview</h2>
               <p>
-                This Refund Policy is <strong>illustrative demo copy</strong> for the Prime Auto Deals marketing preview. Professional services engagements—custom software,
-                migrations, and retainers—are governed by master services agreements, statements of work, and local law. Final terms must be drafted with qualified counsel before
-                you bill real clients.
+                This Refund Policy applies to Prime Auto Deals professional services engagements—custom
+                software, migrations, packages, and retainers. Specific commercial terms in your master
+                services agreement or statement of work control when they differ from this page.
               </p>
             </section>
 
             <section id="deposits" className="scroll-mt-28">
               <h2 className="mb-4 text-2xl font-bold tracking-tight text-ink md:text-3xl">Deposits & kickoff</h2>
               <p>
-                When a deposit is collected to reserve a squad or calendar window, we would disclose whether it is credited toward the first invoice, refundable until a kickoff
-                milestone, or non-refundable after work begins. Any non-refundable portion would be listed before you authorize payment.
+                When a deposit is collected to reserve a squad or calendar window, we disclose whether it is
+                credited toward the first invoice, refundable until a kickoff milestone, or non-refundable
+                after work begins. Any non-refundable portion is listed before you authorize payment.
               </p>
             </section>
 
             <section id="milestones" className="scroll-mt-28">
               <h2 className="mb-4 text-2xl font-bold tracking-tight text-ink md:text-3xl">Milestones & retainers</h2>
               <p>
-                Fixed-fee projects would typically invoice against documented milestones (for example, discovery sign-off, staging acceptance, production cutover). Monthly
-                retainers would bill in advance for a defined hour bucket and rollover rules, if any, would appear in the SOW—not in fine print on this marketing page.
+                Fixed-fee projects typically invoice against documented milestones (for example, discovery
+                sign-off, staging acceptance, production cutover). Monthly retainers bill in advance for a
+                defined hour bucket; rollover rules, if any, appear in the SOW.
               </p>
             </section>
 
             <section id="cancellation" className="scroll-mt-28">
               <h2 className="mb-4 text-2xl font-bold tracking-tight text-ink md:text-3xl">Cancellation</h2>
               <p>
-                Either party would terminate per the notice period in the governing agreement. Fees for work already performed, licensed third-party tools, and non-cancelable
-                vendor commitments would remain due as described in the contract. Unused prepaid retainer hours, if applicable, would be handled per the SOW.
+                Either party may terminate per the notice period in the governing agreement. Fees for work
+                already performed, licensed third-party tools, and non-cancelable vendor commitments remain
+                due as described in the contract. Unused prepaid retainer hours, if applicable, are handled
+                per the SOW.
               </p>
             </section>
 
             <section id="third-party-services" className="scroll-mt-28">
               <h2 className="mb-4 text-2xl font-bold tracking-tight text-ink md:text-3xl">Third-party fees</h2>
               <p>
-                Commerce platform subscriptions, app licenses, infrastructure, and payment processing are billed by their vendors. We would pass through those costs only when
-                agreed, with receipts or admin access so you can audit charges.
+                Commerce platform subscriptions, app licenses, infrastructure, and payment processing are
+                billed by their vendors. We pass through those costs only when agreed, with receipts or admin
+                access so you can audit charges.
               </p>
             </section>
 
             <section id="disputes" className="scroll-mt-28">
               <h2 className="mb-4 text-2xl font-bold tracking-tight text-ink md:text-3xl">Disputes & chargebacks</h2>
               <p>
-                If a billing dispute arises, we would ask you to contact your engagement lead first so we can reconcile timesheets, milestones, and pass-through expenses.
-                Chargebacks may pause work in progress; production policies should describe escalation paths clearly.
+                If a billing dispute arises, contact your engagement lead first so we can reconcile
+                timesheets, milestones, and pass-through expenses. Chargebacks may pause work in progress
+                until the dispute is resolved.
               </p>
             </section>
 
             <section id="contact" className="scroll-mt-28 rounded-none border border-ink/10 bg-card p-6 md:p-8">
               <h2 className="mb-4 text-2xl font-bold tracking-tight text-ink md:text-3xl">Contact</h2>
-              <p className="mb-6">For questions about this demo policy:</p>
+              <p className="mb-6">For questions about this policy:</p>
               <div className="grid gap-5 md:grid-cols-2">
                 <div className="flex items-start gap-4">
                   <span className="flex size-10 shrink-0 items-center justify-center rounded-none bg-signal/10 text-signal">
