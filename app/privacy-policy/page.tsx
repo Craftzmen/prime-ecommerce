@@ -25,8 +25,8 @@ export default function PrivacyPolicyPage() {
       <PolicyHeader
         eyebrow="Legal"
         title="Privacy Policy"
-        description="How we collect, use, and protect personal information on the Prime Auto Deals website and in client engagements."
-        lastUpdated="May 10, 2026"
+        description="How we collect, use, and protect personal information when you use our website or contact us."
+        lastUpdated="October 23, 2026"
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Policies" },
