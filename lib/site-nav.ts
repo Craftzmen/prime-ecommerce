@@ -25,6 +25,7 @@ export const mainNav: NavItem[] = [
 export const policyNav: NavItem[] = [
   { href: "/privacy-policy", label: "Privacy Policy" },
   { href: "/refund-policy", label: "Refund Policy" },
+  { href: "/terms-and-conditions", label: "Terms & Conditions" },
 ]
 
 export const serviceLinks: NavItem[] = [
